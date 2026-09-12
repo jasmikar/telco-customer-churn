@@ -41,6 +41,10 @@ Your question (plain English)
 company, including contract type, payment method, monthly charges, and
 whether the customer churned.
 
+The dataset loaded into BigQuery, with schema auto-detected from the CSV:
+
+![telco-bigquery-table](screenshots/telco-bigquery-table.png)
+
 ## Setup
 
 1. **Install Ollama** (free, no account needed): [ollama.com](https://ollama.com)
