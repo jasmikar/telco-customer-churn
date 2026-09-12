@@ -72,6 +72,14 @@ whether the customer churned.
    python3 ask_the_data.py
    ```
 
+## Dashboard
+
+Live churn-rate dashboard (Looker Studio):
+
+https://datastudio.google.com/reporting/f771f438-2dbd-465f-94bb-7dad1be65e3d
+
+![telco-dashboard](screenshots/telco-dashboard.png)
+
 ## Example questions to try
 
 - "How many customers have a Month-to-month contract?"
@@ -90,6 +98,20 @@ independent calculation in pandas:
 | Total churned customers | 1,869 | 1,869 | ✅ |
 | Churn rate — Electronic check | 45.3% (1,071 / 2,365) | 45.3% (1,071 / 2,365) | ✅ |
 | Churn rate — Bank transfer | 16.7% (258 / 1,544) | 16.7% (258 / 1,544) | ✅ |
+| Churn rate — Credit card | 15% (232 / 1,522) | 15.2% (232 / 1,522) | ✅ |
+
+I also cross-checked the churn rates above against the Looker Studio
+dashboard (which queries the same BigQuery table independently via its
+own calculated field): Electronic check 45.29%, Month-to-month 42.71% —
+consistent with both the model's answers and the pandas calculations
+above, aside from minor rounding differences between the three tools.
+
+Here's an example where I asked the question with an explicit formula
+(rather than a loosely-worded question), which got the model to compute
+the exact same churn rate as the Looker Studio dashboard, down to the
+decimal:
+
+![terminal-example](screenshots/terminal-example.png)
 
 **What I learned:** the generated SQL itself was consistently correct
 across these tests. However, on a 4-row result (churn rate by payment
@@ -101,12 +123,6 @@ information. In a real analytics workflow, this means the generated SQL
 and raw result table should always be surfaced alongside the summary
 (as this script does), so a human can catch omissions like this before
 trusting the summary alone.
-
-## Dashboard 
-Live churn-rate dashboard (Looker Studio): 
-https://datastudio.google.com/reporting/f771f438-2dbd-465f-94bb-7dad1be65e3d
-
-![Churn rate dashboard](screenshots/telco-dashboard.png)
 
 ## Limitations
 
