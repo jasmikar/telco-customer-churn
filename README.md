@@ -111,7 +111,7 @@ Here's an example where I asked the question with an explicit formula
 the exact same churn rate as the Looker Studio dashboard, down to the
 decimal:
 
-![telco-terminal-example](screenshots/terminal-example.png)
+![telco-terminal-example](screenshots/telco-terminal-example.png)
 
 **What I learned:** the generated SQL itself was consistently correct
 across these tests. However, on a 4-row result (churn rate by payment
