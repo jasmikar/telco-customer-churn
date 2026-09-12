@@ -102,6 +102,12 @@ and raw result table should always be surfaced alongside the summary
 (as this script does), so a human can catch omissions like this before
 trusting the summary alone.
 
+## Dashboard 
+Live churn-rate dashboard (Looker Studio): 
+https://datastudio.google.com/reporting/f771f438-2dbd-465f-94bb-7dad1be65e3d
+
+![Churn rate dashboard](screenshots/dashboard.png)
+
 ## Limitations
 
 - Llama 3.1 (8B) is far smaller than commercial models like Claude or
