@@ -43,7 +43,7 @@ whether the customer churned.
 
 The dataset loaded into BigQuery, with schema auto-detected from the CSV:
 
-![telco-bigquery-table](screenshots/telco-bigquery-table.png)
+![telco-bigquery](screenshots/telco-bigquery.png)
 
 ## Setup
 
