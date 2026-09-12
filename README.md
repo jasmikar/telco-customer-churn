@@ -76,6 +76,35 @@ The dataset loaded into BigQuery, with schema auto-detected from the CSV:
    python3 ask_the_data.py
    ```
 
+## Hypothesis testing
+
+`ask_the_data.py` answers "what happened" (descriptive, AI-assisted).
+To go a step further, `hypothesis_test.py` answers "is this difference
+real, or could it be due to chance" — using a formal chi-squared test
+of independence rather than just reporting churn rates.
+
+**Null hypothesis for each test:** churn is independent of the category
+(the category has no relationship with whether a customer leaves).
+
+| Hypothesis | p-value | Result |
+|---|---|---|
+| Churn is independent of contract type | 5.86e-258 | Rejected — significant relationship |
+| Churn is independent of internet service type | 9.57e-160 | Rejected — significant relationship |
+| Churn is independent of payment method | 3.68e-140 | Rejected — significant relationship |
+
+![telco-hypothesis-test](screenshots/telco-hypothesis-test.png)
+
+All three p-values are far below the 0.05 significance threshold, so in
+each case there is strong statistical evidence that the category is
+related to churn — the differences in churn rate seen in the dashboard
+are very unlikely to be due to chance alone.
+
+Run it yourself:
+```
+pip install scipy --break-system-packages
+python3 hypothesis_test.py
+```
+
 ## Dashboard
 
 Live churn-rate dashboard (Looker Studio):
