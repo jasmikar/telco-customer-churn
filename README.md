@@ -106,7 +106,7 @@ trusting the summary alone.
 Live churn-rate dashboard (Looker Studio): 
 https://datastudio.google.com/reporting/f771f438-2dbd-465f-94bb-7dad1be65e3d
 
-![Churn rate dashboard](screenshots/dashboard.png)
+![Churn rate dashboard](screenshots/telco-dashboard.png)
 
 ## Limitations
 
