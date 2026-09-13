@@ -75,6 +75,10 @@ The dataset loaded into BigQuery, with schema auto-detected from the CSV:
    ```
    python3 ask_the_data.py
    ```
+8. **For the hypothesis test script**: download the CSV directly from
+   [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+   and place it in the project root as `WA_Fn-UseC_-Telco-Customer-Churn.csv`
+   (raw data files are excluded from this repo via `.gitignore`).
 
 ## Hypothesis testing
 
@@ -109,6 +113,22 @@ python3 hypothesis_test.py
 Raw data in BigQuery is transformed through a dbt staging model (stg_customers) that renames columns to a consistent format, casts TotalCharges to a proper numeric type, and documents the semantic meaning of each field. 11 data quality tests (not_null, unique, accepted_values) all pass, verifying the cleaned data meets expected constraints before any analysis is built on top of it. 
 
 ![telco-dbt-test](screenshots/telco-dbt-test.png)
+
+Run it yourself:
+```
+cd telco_dbt
+pip install dbt-core dbt-bigquery --break-system-packages
+dbt init telco_dbt
+```
+When prompted, choose `bigquery` as the database, `service_account` as the
+authentication method, and point it at your own service account key file,
+project ID, and dataset (see Setup above). Then:
+```
+dbt run
+dbt test
+```
+`dbt run` builds the `stg_customers` model as a view in BigQuery; `dbt test`
+runs the 11 data quality tests against it.
 
 ## Dashboard
 
