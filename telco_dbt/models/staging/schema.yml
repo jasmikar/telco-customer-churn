@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: >
+      Cleaned, renamed, and consistently typed version of the raw
+      customer table -- the semantic layer used by all downstream
+      analysis (ask_the_data.py, hypothesis_test.py, and the Looker
+      Studio dashboard all rely on the same underlying logic this model
+      encodes, even though they query the data in different ways).
+    columns:
+      - name: customer_id
+        description: Unique identifier for each customer.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: gender
+        data_tests:
+          - accepted_values:
+              values: ['Male', 'Female']
+
+      - name: contract_type
+        description: The customer's contract length.
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Month-to-month', 'One year', 'Two year']
+
+      - name: internet_service
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['DSL', 'Fiber optic', 'No']
+
+      - name: payment_method
+        data_tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 'Electronic check'
+                - 'Mailed check'
+                - 'Bank transfer (automatic)'
+                - 'Credit card (automatic)'
+
+      - name: has_churned
+        description: Whether the customer has left the company.
+        data_tests:
+          - not_null
+
+      - name: monthly_charges
+        data_tests:
+          - not_null

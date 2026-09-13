@@ -1,0 +1,82 @@
+[0m23:36:24.839614 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ce023c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e5de710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e5de990>]}
+
+
+============================== 23:36:24.843366 | 45b348c2-4a97-4280-bcdb-5e23972ac45b ==============================
+[0m23:36:24.843366 [info ] [MainThread]: Running with dbt=1.12.4
+[0m23:36:24.843708 [debug] [MainThread]: running dbt with arguments {'hints_enabled': 'True', 'empty': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'introspect': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/jasmin/.dbt', 'target_path': 'None', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'partial_parse': 'True', 'log_path': 'logs', 'use_colors': 'True', 'invocation_command': 'dbt init telco_dbt', 'warn_error': 'None', 'version_check': 'True', 'printer_width': '80', 'debug': 'False', 'cache_selected_only': 'False', 'maximum_seed_size_mib': '1'}
+[0m23:36:24.852650 [info ] [MainThread]: Creating dbt configuration folder at /Users/jasmin/.dbt
+[0m23:36:24.853680 [debug] [MainThread]: Starter project path: /opt/homebrew/lib/python3.14/site-packages/dbt/include/starter_project
+[0m23:36:24.857931 [info ] [MainThread]: Setting up your profile.
+[0m23:42:52.236097 [info ] [MainThread]: Profile telco_dbt written to /Users/jasmin/.dbt/profiles.yml using target's profile_template.yml and your supplied values.
+[0m23:42:52.240482 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m23:42:52.241690 [info ] [MainThread]: dbt version: 1.12.4
+[0m23:42:52.242209 [info ] [MainThread]: python version: 3.14.7
+[0m23:42:52.242610 [info ] [MainThread]: python path: /opt/homebrew/opt/python@3.14/bin/python3.14
+[0m23:42:52.243018 [info ] [MainThread]: os info: macOS-26.6.2-arm64-arm-64bit-Mach-O
+[0m23:42:52.302853 [info ] [MainThread]: Using profiles dir at /Users/jasmin/.dbt
+[0m23:42:52.303203 [info ] [MainThread]: Using profiles.yml file at /Users/jasmin/.dbt/profiles.yml
+[0m23:42:52.303376 [info ] [MainThread]: Using dbt_project.yml file at /Users/jasmin/GitHub/telco-customer-churn/telco_dbt/dbt_project.yml
+[0m23:42:52.303551 [info ] [MainThread]: adapter type: bigquery
+[0m23:42:52.303695 [info ] [MainThread]: adapter version: 1.12.0
+[0m23:42:52.362203 [info ] [MainThread]: Configuration:
+[0m23:42:52.362507 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m23:42:52.362658 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m23:42:52.362877 [info ] [MainThread]: Required dependencies:
+[0m23:42:52.363128 [debug] [MainThread]: Executing "git --help"
+[0m23:42:52.378682 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:42:52.379360 [debug] [MainThread]: STDERR: "b''"
+[0m23:42:52.379565 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m23:42:52.379732 [info ] [MainThread]: Connection:
+[0m23:42:52.379934 [info ] [MainThread]:   method: service-account
+[0m23:42:52.380072 [info ] [MainThread]:   database: telco-customer-churn-508416
+[0m23:42:52.380204 [info ] [MainThread]:   execution_project: telco-customer-churn-508416
+[0m23:42:52.380328 [info ] [MainThread]:   schema: churn_data
+[0m23:42:52.380445 [info ] [MainThread]:   location: EU
+[0m23:42:52.380563 [info ] [MainThread]:   priority: interactive
+[0m23:42:52.380682 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m23:42:52.380797 [info ] [MainThread]:   reservation: None
+[0m23:42:52.380912 [info ] [MainThread]:   impersonate_service_account: None
+[0m23:42:52.381028 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m23:42:52.381145 [info ] [MainThread]:   job_retries: 1
+[0m23:42:52.381257 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m23:42:52.381372 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m23:42:52.381486 [info ] [MainThread]:   job_link_info_level_log: False
+[0m23:42:52.381599 [info ] [MainThread]:   timeout_seconds: 300
+[0m23:42:52.381714 [info ] [MainThread]:   client_id: None
+[0m23:42:52.381825 [info ] [MainThread]:   token_uri: None
+[0m23:42:52.381939 [info ] [MainThread]:   compute_region: None
+[0m23:42:52.382051 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m23:42:52.382166 [info ] [MainThread]:   gcs_bucket: None
+[0m23:42:52.382279 [info ] [MainThread]:   dataproc_batch: None
+[0m23:42:52.382958 [info ] [MainThread]: Registered adapter: bigquery=1.12.0
+[0m23:42:52.492347 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m23:42:52.492783 [debug] [MainThread]: On debug: select 1 as id
+[0m23:42:52.493031 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:42:55.910510 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=telco-customer-churn-508416&j=bq:EU:8a722afc-9b70-4db9-87c5-242ac83d4403&page=queryresults
+[0m23:42:56.107149 [debug] [MainThread]: SQL status: OK in 0.195 seconds
+[0m23:42:56.377369 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m23:42:56.378178 [info ] [MainThread]: [32mAll checks passed![0m
+[0m23:42:56.379030 [info ] [MainThread]: Your new dbt project "telco_dbt" was created!
+Initialized new project in /Users/jasmin/GitHub/telco-customer-churn/telco_dbt/telco_dbt
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:42:56.391442 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 391.65186, "process_in_blocks": "0", "process_kernel_time": 0.323922, "process_mem_max_rss": "245383168", "process_out_blocks": "0", "process_user_time": 1.608685}
+[0m23:42:56.392510 [debug] [MainThread]: Command `dbt init` succeeded at 23:42:56.392315 after 391.65 seconds
+[0m23:42:56.392943 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m23:42:56.393444 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e442b10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a6130b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11d10b130>]}
+[0m23:42:56.394316 [debug] [MainThread]: Flushing usage events
+[0m23:42:56.933720 [debug] [MainThread]: An error was encountered while trying to flush usage events

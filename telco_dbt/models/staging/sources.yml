@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: churn_data
+    database: telco-customer-churn-508416
+    schema: churn_data
+    tables:
+      - name: customers
+        description: >
+          Raw customer data from the IBM Telco Customer Churn dataset,
+          loaded directly from CSV via BigQuery's auto-detected schema.

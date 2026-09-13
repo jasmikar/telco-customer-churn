@@ -105,6 +105,11 @@ pip install scipy --break-system-packages
 python3 hypothesis_test.py
 ```
 
+## Data modeling with dbt 
+Raw data in BigQuery is transformed through a dbt staging model (stg_customers) that renames columns to a consistent format, casts TotalCharges to a proper numeric type, and documents the semantic meaning of each field. 11 data quality tests (not_null, unique, accepted_values) all pass, verifying the cleaned data meets expected constraints before any analysis is built on top of it. 
+
+![telco-dbt-test](screenshots/telco-dbt-test.png)
+
 ## Dashboard
 
 Live churn-rate dashboard (Looker Studio):
