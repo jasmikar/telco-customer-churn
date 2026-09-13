@@ -3,3 +3,4 @@
 *.zip
 *.csv
 screenshots/telco-vscode.png
+logs/
